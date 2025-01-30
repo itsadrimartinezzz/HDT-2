@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        String rutaArchivo = "C:\\Users\\adria_qibhpui\\OneDrive\\Escritorio\\Estructura de Datos\\hdt#2\\datos.txt"; // RUTA ABSOLUTA
+        String rutaArchivo = "datos.txt";
 
         // Leer el archivo
         ReadFile lector = new ReadFile();
