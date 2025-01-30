@@ -1,11 +1,7 @@
-import java.io.*;
-import java.util.*;
-
 public class Calculadora {
-
     private Stack<Integer> stack;
 
-    // Constructor que acepta cualquier implementación de Stack
+    // ✅ Corrección: Constructor acepta cualquier implementación de Stack<Integer>
     public Calculadora(Stack<Integer> stack) {
         this.stack = stack;
     }
