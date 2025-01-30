@@ -1,5 +1,4 @@
 import java.io.*;
-
 public class ReadFile {
 
     public String LeerArchivo(String ruta) {

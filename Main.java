@@ -16,7 +16,7 @@ public class Main {
         String[] lineas = contenido.split("\n");
 
         // Crear calculadora con VectorStack
-        Stack<Integer> miPila = new VectorStack<>();
+        Stack<Integer> miPila = new StackVector<>();
         Calculadora calculadora = new Calculadora(miPila);
 
         // Evaluar cada línea y mostrar el resultado

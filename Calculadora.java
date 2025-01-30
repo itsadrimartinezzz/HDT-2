@@ -46,7 +46,7 @@ public class Calculadora {
         return "+-*/%".contains(token);
     }
 
-    private int realizarOperacion(int a, int b, String operador) {
+    public int realizarOperacion(int a, int b, String operador) {
         return switch (operador) {
             case "+" -> a + b;
             case "-" -> a - b;
