@@ -1,10 +1,19 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class Main {
     public static void main(String[] args) {
         String rutaArchivo = "datos.txt"; // Asegúrate de que el archivo esté en la misma carpeta que el programa
 
         // Leer el archivo
-        ReadFile lector = new ReadFile();
-        String contenido = lector.LeerArchivo(rutaArchivo);
+        String contenido;
+        try {
+            contenido = Files.readString(Paths.get(rutaArchivo));
+        } catch (IOException e) {
+            System.out.println("Error: No se pudo leer el archivo " + rutaArchivo);
+            return;
+        }
 
         // Verificar si el archivo tiene contenido válido
         if (contenido.trim().isEmpty()) {
@@ -15,7 +24,7 @@ public class Main {
         // Separar por líneas para evaluar múltiples expresiones
         String[] lineas = contenido.split("\n");
 
-        // Crear calculadora con VectorStack
+        // Crear calculadora con StackVector
         Stack<Integer> miPila = new StackVector<>();
         Calculadora calculadora = new Calculadora(miPila);
 
