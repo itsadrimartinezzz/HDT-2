@@ -1,12 +1,12 @@
-public class Calculadora {
+public class Calculadora implements Interfaz {
     private Stack<Integer> stack;
 
-    // Constructor acepta cualquier implementación de Stack<Integer>
+    // Constructor acepta cualquier implementación de la interfaz Stack<E>
     public Calculadora(Stack<Integer> stack) {
         this.stack = stack;
     }
 
-    // Método para evaluar una expresión postfix
+    @Override
     public int evaluar(String expresion) throws IllegalArgumentException {
         String[] tokens = expresion.split(" ");
 
@@ -31,6 +31,11 @@ public class Calculadora {
         }
 
         return stack.pop();
+    }
+
+    @Override
+    public int operar(int operandoA, int operandoB, String operador) {
+        return realizarOperacion(operandoA, operandoB, operador);
     }
 
     private boolean esNumero(String token) {
