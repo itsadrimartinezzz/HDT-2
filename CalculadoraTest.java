@@ -4,14 +4,14 @@ public class CalculadoraTest {
 
     @Test
     public void testEvaluarExpresionSimple() {
-        Stack<Integer> stack = new VectorStack<>();
+        Stack<Integer> stack = new StackVector<>();
         Calculadora calc = new Calculadora(stack);
         Assert.assertEquals(15, calc.evaluar("1 2 + 4 * 3 +"));
     }
 
     @Test
     public void testDivisionPorCero() {
-        Stack<Integer> stack = new VectorStack<>();
+        Stack<Integer> stack = new StackVector<>();
         Calculadora calc = new Calculadora(stack);
         
         try {
@@ -24,7 +24,7 @@ public class CalculadoraTest {
 
     @Test
     public void testExpresionInvalida() {
-        Stack<Integer> stack = new VectorStack<>();
+        Stack<Integer> stack = new StackVector<>();
         Calculadora calc = new Calculadora(stack);
         
         try {
