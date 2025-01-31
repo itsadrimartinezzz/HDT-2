@@ -1,11 +1,34 @@
+/**
+ * Clase Calculadora que implementa una interfaz para realizar evaluaciones de expresiones y operaciones matemáticas.
+ * 
+ * <p>
+ * Fecha de inicio: 23/01/2025<br>
+ * Fecha de finalización: 30/01/2025
+ * </p>
+ * 
+ * @author Adriana Martinez
+ * @author Derek Coronado
+ * @author Luis Figueroa
+ */
 public class Calculadora implements Interfaz {
     private Stack<Integer> stack;
 
-    // Constructor acepta cualquier implementación de la interfaz Stack<E>
+    /**
+     * Constructor de la clase Calculadora.
+     * 
+     * @param stack Una implementación de la interfaz Stack&lt;Integer&gt; que se utilizará para manejar los operandos.
+     */
     public Calculadora(Stack<Integer> stack) {
         this.stack = stack;
     }
 
+    /**
+     * Evalúa una expresión en notación postfija y devuelve el resultado.
+     * 
+     * @param expresion La expresión en notación postfija a evaluar.
+     * @return El resultado de la evaluación de la expresión.
+     * @throws IllegalArgumentException Si la expresión es inválida.
+     */
     @Override
     public int evaluar(String expresion) throws IllegalArgumentException {
         String[] tokens = expresion.split(" ");
@@ -33,11 +56,25 @@ public class Calculadora implements Interfaz {
         return stack.pop();
     }
 
+    /**
+     * Realiza una operación entre dos operandos utilizando un operador especificado.
+     * 
+     * @param operandoA El primer operando.
+     * @param operandoB El segundo operando.
+     * @param operador El operador matemático a utilizar.
+     * @return El resultado de la operación.
+     */
     @Override
     public int operar(int operandoA, int operandoB, String operador) {
         return realizarOperacion(operandoA, operandoB, operador);
     }
 
+    /**
+     * Verifica si un token dado representa un número.
+     * 
+     * @param token El token a evaluar.
+     * @return {@code true} si el token es un número, de lo contrario {@code false}.
+     */
     private boolean esNumero(String token) {
         try {
             Integer.parseInt(token);
@@ -47,10 +84,26 @@ public class Calculadora implements Interfaz {
         }
     }
 
+    /**
+     * Verifica si un token dado representa un operador matemático válido.
+     * 
+     * @param token El token a evaluar.
+     * @return {@code true} si el token es un operador válido, de lo contrario {@code false}.
+     */
     private boolean esOperador(String token) {
         return "+-*/%".contains(token);
     }
 
+    /**
+     * Realiza una operación matemática entre dos operandos dados utilizando un operador especificado.
+     * 
+     * @param a El primer operando.
+     * @param b El segundo operando.
+     * @param operador El operador matemático a utilizar.
+     * @return El resultado de la operación.
+     * @throws IllegalArgumentException Si el operador es desconocido.
+     * @throws ArithmeticException Si se intenta realizar una división o módulo por cero.
+     */
     private int realizarOperacion(int a, int b, String operador) {
         return switch (operador) {
             case "+" -> a + b;

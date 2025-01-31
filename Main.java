@@ -1,8 +1,27 @@
+/**
+ * Clase principal que lee expresiones matemáticas desde un archivo, las evalúa utilizando la clase Calculadora
+ * y muestra los resultados.
+ * 
+ * <p>
+ * Fecha de inicio: 23/01/2025<br>
+ * Fecha de finalización: 30/01/2025
+ * </p>
+ * 
+ * @author Adriana Martinez
+ * @author Derek Coronado
+ * @author Luis Figueroa
+ */
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Main {
+
+    /**
+     * Método principal que lee un archivo de texto con expresiones matemáticas, las evalúa y muestra los resultados.
+     * 
+     * @param args Argumentos de línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         String rutaArchivo = "datos.txt"; // Asegúrate de que el archivo esté en la misma carpeta que el programa
 
